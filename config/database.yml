@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 6000
+  host: <%= ENV.fetch("DB_HOST") { 'localhost' } %>
+  username: <%= ENV.fetch("DB_USER") { 'postgresql' } %>
+  password: <%= ENV.fetch("DB_PASS") { '' } %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { 'chat_ruby_vue_dev' } %>
+
+test:
+  <<: *default
+  database: chat_ruby_vue_test
+
+production:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { 'chat_ruby_vue_prod' } %>
+
+dev:
+  <<: *default
+  database: <%= ENV.fetch("DB_NAME") { 'chat_ruby_vue_dev' } %>

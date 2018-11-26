@@ -1,0 +1,8 @@
+<%= render 'chats/vue_template/sidepanel' %>
+<%= render 'chats/vue_template/content-chat' %>
+<script type="text/x-template" id="frame-template">
+  <div id="frame">
+    <sidepanel v-bind:user='user' v-bind:contact='current_contact' v-bind:contacts='contacts'></sidepanel>
+    <content-chat v-bind:user='user' v-bind:contact_info='current_contact' v-on:updateLastMessage="updateLastMessage"></content-chat>
+  </div>
+</script>

@@ -1,0 +1,19 @@
+<script type="text/x-template" id="contacts-template">
+  <div id="contacts">
+    <ul>
+      <li v-bind:class="['contact', contact.active]" v-for="contact in contacts">
+        <div class="wrap">
+          <span v-bind:class="['contact-status', contact.status_user]"></span>
+          <img v-bind:src="contact.img_url" />
+          <div class="meta">
+            <p class="name">{{ contact.name }}</p>
+            <p class="preview">
+              <span v-if="contact.send_by_user">You:</span>
+              {{ contact.preview }}
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</script>

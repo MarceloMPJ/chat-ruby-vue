@@ -1,0 +1,11 @@
+<%= render 'chats/vue_template/content-chat/contact-profile' %>
+<%= render 'chats/vue_template/content-chat/messages' %>
+<%= render 'chats/vue_template/content-chat/message-input' %>
+
+<script type="text/x-template" id="content-chat-template">
+  <div class="content">
+    <contact-profile v-bind:contact_info="contact_info"></contact-profile>
+    <messages v-bind:messages="messages"></messages>
+    <message-input v-on:submit="submitMessage"></message-input>
+  </div>
+</script>

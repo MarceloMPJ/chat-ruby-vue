@@ -1,0 +1,12 @@
+<%= render 'chats/vue_template/sidepanel/profile' %>
+<%= render 'chats/vue_template/sidepanel/search' %>
+<%= render 'chats/vue_template/sidepanel/contact' %>
+<%= render 'chats/vue_template/sidepanel/bottom-bar' %>
+<script type="text/x-template" id="sidepanel-template">
+  <div id="sidepanel">
+    <profile v-bind:user='user'></profile>
+    <search></search>
+    <contact v-bind:contacts='contacts'></contact>
+    <bottom-bar></bottom-bar>
+  </div>
+</script>
