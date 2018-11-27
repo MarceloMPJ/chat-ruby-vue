@@ -21,4 +21,5 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# chat-ruby-vue
+Learning Vue with Ruby (on Rails), building a chat.
