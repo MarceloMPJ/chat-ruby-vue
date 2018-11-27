@@ -1,4 +1,3 @@
-//=require ./sidepanel/profile
 //=require ./sidepanel/search
 //=require ./sidepanel/contact
 //=require ./sidepanel/bottom-bar
