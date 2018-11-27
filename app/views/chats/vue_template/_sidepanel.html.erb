@@ -1,10 +1,14 @@
-<%= render 'chats/vue_template/sidepanel/profile' %>
 <%= render 'chats/vue_template/sidepanel/search' %>
 <%= render 'chats/vue_template/sidepanel/contact' %>
 <%= render 'chats/vue_template/sidepanel/bottom-bar' %>
 <script type="text/x-template" id="sidepanel-template">
   <div id="sidepanel">
-    <profile v-bind:user='user'></profile>
+    <div id="profile">
+      <div class="wrap">
+        <img id="profile-img" src="<%= @current_user.image_url %>" class="online" />
+        <p><%= @current_user.name %></p>
+      </div>
+    </div>
     <search></search>
     <contact v-bind:contacts='contacts'></contact>
     <bottom-bar></bottom-bar>
