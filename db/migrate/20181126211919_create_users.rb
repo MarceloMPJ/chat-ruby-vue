@@ -3,9 +3,10 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :name
       t.string :user_name
-      t.text :token
+      t.string  :image_url
+      t.text   :token
 
-      t.timestamp
+      t.timestamps
     end
   end
 end
