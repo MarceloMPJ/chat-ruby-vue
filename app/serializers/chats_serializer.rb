@@ -13,7 +13,7 @@ class ChatsSerializer < ActiveModel::Serializer
   end
 
   def active
-    'active'
+    nil
   end
 
   def status_user
@@ -36,7 +36,7 @@ class ChatsSerializer < ActiveModel::Serializer
 
   def last_message
     return @message if @message
-    @message = Message.between_users(object, current_user).first
+    @message = Message.between_users(object, current_user).last
   end
 
 end

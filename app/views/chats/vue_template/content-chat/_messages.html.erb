@@ -2,8 +2,8 @@
   <div class="messages">
     <ul>
       <li v-bind:class="message.type" v-for="message in messages">
-        <img v-bind:src="message.message_img" alt="" />
-        <p>{{ message.content }}</p>
+        <img v-bind:src="message.contact_img" alt="" />
+        <p>{{ message.body }}</p>
       </li>
     </ul>
   </div>

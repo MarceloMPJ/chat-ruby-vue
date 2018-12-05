@@ -12,7 +12,8 @@ var app = new Vue({
   el: '#app',
   props: ['contact_info'],
   data: {
-    contacts: []
+    contacts: [],
+    current_contact: null
   },
   template: '#frame-template',
   methods: {
@@ -30,10 +31,13 @@ var app = new Vue({
     axios.get('/chat_apis')
       .then(function(response) {
         chat.contacts = response.data
-        chat.current_contact = chat.contacts[0]
       })
       .catch(function(error) {
-        alert("Ops... Deu ruim!\nVeja com o Marcelo Jr. o que rolou :)")
+        console.error("Ops... Deu ruim!\nVeja com o Marcelo Jr. o que rolou :)")
       })
+
+    this.$on('showChat', function(contact) {
+      chat.current_contact = contact
+    })
   }
 });

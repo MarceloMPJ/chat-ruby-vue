@@ -5,7 +5,7 @@
 <script type="text/x-template" id="content-chat-template">
   <div class="content">
     <contact-profile v-bind:contact_info="contact_info"></contact-profile>
-    <messages v-bind:messages="messages"></messages>
+    <messages v-bind:messages="contact_info.messages"></messages>
     <message-input v-on:submit="submitMessage"></message-input>
   </div>
 </script>

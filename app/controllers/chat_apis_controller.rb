@@ -8,6 +8,7 @@ class ChatApisController < ApplicationController
   end
 
   def show
+    render json: @user, serializer: ChatSerializer, current_user: current_user
   end
 
   def update
