@@ -24,19 +24,5 @@ Vue.component('content-chat', {
         content: message_content.content
       });
     }
-  },
-  created: function() {
-    this.messages = [
-      {
-        type: 'sent',
-        message_img: 'http://emilcarlsson.se/assets/mikeross.png',
-        content: 'Agora vamo mudar isso ai, talquei?!'
-      },
-      {
-        type: 'replies',
-        message_img: 'http://emilcarlsson.se/assets/harveyspecter.png',
-        content: 'Vai mudar isso ai mesmo?'
-      }
-    ];
   }
 });

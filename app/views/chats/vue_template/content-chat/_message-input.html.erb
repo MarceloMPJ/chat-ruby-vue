@@ -1,7 +1,7 @@
 <script type="text/x-template" id="message-input-template">
   <div class="message-input">
     <div class="wrap">
-      <input type="text" v-model="messagePackage.content" v-on:keyup.13="submitMessage" placeholder="Escrever sua mensagem..." />
+      <input type="text" v-model="content" v-on:keyup.13="submitMessage" placeholder="Escrever sua mensagem..." />
       <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
       <button class="submit" v-on:click.prevent="submitMessage">
         <i class="fa fa-paper-plane" aria-hidden="true"></i>

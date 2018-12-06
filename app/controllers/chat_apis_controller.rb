@@ -1,7 +1,10 @@
 class ChatApisController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   before_action :load_users, only: [:index]
-  before_action :load_user, only: [:show, :update]
+  before_action :load_user, only: [:show, :new_message]
+
 
   def index
     render json: @users, each_serializer: ChatsSerializer, current_user: current_user
@@ -12,6 +15,19 @@ class ChatApisController < ApplicationController
   end
 
   def update
+  end
+
+  def new_message
+    Message.create(
+      body: params[:body],
+      sender: current_user,
+      receiver: @user
+    )
+    render json: {}, status: 201
+  end
+
+  def user_info
+    render json: current_user, serializer: UserInfoSerializer
   end
 
   private
