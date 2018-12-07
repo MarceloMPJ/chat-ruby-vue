@@ -25,11 +25,11 @@ class ChatsSerializer < ActiveModel::Serializer
   end
 
   def preview
-    last_message.body
+    last_message.try(:body)
   end
 
   def send_by_user
-    last_message.sender_id != object.id
+    last_message.sender_id != object.id if last_message
   end
 
   private

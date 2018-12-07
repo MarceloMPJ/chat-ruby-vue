@@ -85,7 +85,7 @@ var app = new Vue({
 window.WS = new WebSocket('ws://localhost:3000/cable');
 WS.onmessage = function(e){
   data = JSON.parse(e.data)
-  if(data.message && data.message.message && data.message.message.send_id != app.user.id) {
+  if(data.message && data.message.message && data.message.message.send_id == app.current_contact.id) {
     app.current_contact.messages.push(data.message.message);
   }
 };
